@@ -1,6 +1,8 @@
 name: CI
 on:
-  pull-request
+  pull-request:
+    branches:
+      - main
 
 jobs:
   ci:
