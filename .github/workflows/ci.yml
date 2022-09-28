@@ -1,11 +1,13 @@
 name: CI
 on:
-  pull-request:
+  pull_request:
     branches:
       - main
 
 jobs:
   ci:
     runs-on: ubuntu-latest
-    - name: Check PR title
-      run: echo PR title: ${{ github.event.pull_request.title }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check PR title
+        run: echo PR title "${{ github.event.pull_request.title }}"
